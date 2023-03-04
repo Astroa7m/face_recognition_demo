@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "541759250656",
+    "project_id": "face-detection-demo-c386a",
+    "storage_bucket": "face-detection-demo-c386a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541759250656:android:0bf050f470258c7782f085",
+        "android_client_info": {
+          "package_name": "com.astroscoding.facedetectiondemo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541759250656-6078m8ff1kmualrevdj21fcvc32aoguh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMAseMefTP37KDmDxFeYZ6wdm9DAMoo6s"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541759250656-6078m8ff1kmualrevdj21fcvc32aoguh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

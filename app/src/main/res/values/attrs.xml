@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FaceSquareOverlay">
+        <attr name="square_rect_left" format="integer"/>
+        <attr name="square_rect_right" format="integer"/>
+        <attr name="square_rect_top" format="integer"/>
+        <attr name="square_rect_bottom" format="integer"/>
+    </declare-styleable>
+</resources>
