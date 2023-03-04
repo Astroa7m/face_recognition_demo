@@ -4,6 +4,7 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.RectF
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
 
         val model = FileUtil.loadMappedFile(this@MainActivity, "mobile_face_net.tflite")
         interpreter = Interpreter(model, interpreterOptions)
-//        interpreter?.allocateTensors()
+        interpreter?.allocateTensors()
 
     }
 
@@ -116,7 +117,7 @@ class MainActivity : AppCompatActivity() {
 
     @SuppressLint("UnsafeOptInUsageError")
     private fun startCamera(
-        onSuccess: (TensorImage?, Bitmap?) -> Unit,
+        onSuccess: (TensorImage?, Bitmap?, RectF?) -> Unit,
         onFailure: (Throwable) -> Unit,
     ) {
 
@@ -165,10 +166,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToCamera() = startCamera(
-        onSuccess = { tensorImage, bitmap ->
+        onSuccess = { tensorImage, bitmap, rect ->
             if (tensorImage == null) {
                 binding.currentFaceLabel.text = "No Face detected"
             } else {
+                binding.faceOverlay.setFaceRect(rect)
                 bitmap?.let {
                     binding.imageView.setImageBitmap(bitmap)
                 }

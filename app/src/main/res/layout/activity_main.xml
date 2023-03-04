@@ -13,10 +13,10 @@
 
 
 
-    <com.astroscoding.facedetectiondemo.FaceSquareOverlay
-        android:id="@+id/face_rect"
+    <com.astroscoding.facedetectiondemo.FaceOverlayView
+        android:id="@+id/face_overlay"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <ImageView
         android:id="@+id/imageView"

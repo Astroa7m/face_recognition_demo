@@ -20,7 +20,7 @@ import kotlin.experimental.inv
 @androidx.camera.core.ExperimentalGetImage
 class ImageAnalyzer(
     private val faceDetector: FaceDetector,
-    private val onSuccess: (TensorImage?, Bitmap?) -> Unit,
+    private val onSuccess: (TensorImage?, Bitmap?, RectF?) -> Unit,
     private val onFailure: (Throwable) -> Unit
 ) : ImageAnalysis.Analyzer {
 
@@ -45,7 +45,7 @@ class ImageAnalyzer(
                         null
                 }
 
-                    onSuccess(processedImage, bitmap)
+                    onSuccess(processedImage, bitmap, RectF(processedFaces.firstOrNull()?.boundingBox))
             }
             .addOnFailureListener(onFailure)
             .addOnCompleteListener { imageProxy.close() }
